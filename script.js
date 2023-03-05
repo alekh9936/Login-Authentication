@@ -6,7 +6,7 @@ function login() {
   if (username === "" || password === ""){
     alert("Credentials required")
   }
-  if (username === "valid_username" && password === "valid_password") {
+  if (username === "Admin" && password === "Admin")||(username === "Student" && password === "Student") {
     alert("Login successful!");
   } else {
     alert("Invalid username or password.");
