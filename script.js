@@ -7,8 +7,26 @@ function login() {
     alert("Credentials required")
   }
   if (username === "Admin" && password === "Admin"){
-    alert("Login successful!");
-  } else {
+    alert("Login successful, Redirecting");
+    window.location.href = "https://example.com/dashboard";
+  } 
+  if (username === "Student" && password === "Student"){
+    alert("Login successful, Redirecting");
+    window.location.href = "https://example.com/dashboard";
+  }
+  if (username === "Faculty" && password === "Faculty"){
+    alert("Login successful, Redirecting");
+    window.location.href = "https://example.com/dashboard";
+  }
+  if (username === "Test" && password === "Test"){
+    alert("Login successful, Redirecting");
+    window.location.href = "https://example.com/dashboard";
+  }
+  if (username === "Subject" && password === "Subject"){
+    alert("Login successful, Redirecting");
+    window.location.href = "https://example.com/dashboard";
+  }
+  else {
     alert("Invalid username or password.");
   }
 }
