@@ -130,32 +130,7 @@ input {
 }
 
 
-.login-form .last-button{
-  text-align: center;
-  margin: 20px 85px;
-  background-color: orangered;
-  border-radius: 6px;
-  line-height: 48px;
-}
 
-.login-form .last-button a{
-  color: white;
-  font-family: arial rounded mt;
-}
-
-.aside-text{
-  margin-top: 25%;
-  margin-right: 35%;
-    float: right;
-    width: 32%;
-  box-sizing: border-box;
-  padding:20px;
-  font-size: 20px;
-  color: whitesmoke;
-  position: fixed;
-  background-color: #48ad26;
-  opacity: 0.5;
-}
 
 .footer{
   background: #fff;
