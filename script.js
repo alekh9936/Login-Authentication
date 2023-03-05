@@ -1,28 +1,20 @@
-function login() {
-  // Get input values
-  var username = document.getElementById("username").value;
-  var password = document.getElementById("password").value;
-  if (username==''||password==''){
-    alert("All credentials should be filled")
-  }
+Papa.parse('users.csv', {
+  download: true,
+  header: true,
+  complete: function(results) {
+    // Iterate over each row in the CSV file
+    for (var i = 0; i < results.data.length; i++) {
+      var row = results.data[i];
 
-  // Read CSV file
-  var xhr = new XMLHttpRequest();
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-      var rows = xhr.responseText.split("\n");
-      for (var i = 0; i < rows.length; i++) {
-        var columns = rows[i].split(",");
-        if (username === columns[0] && password === columns[1]) {
-          // Login successful, redirect to desired page
-          window.location.href = "https://example.com/dashboard";
-          return;
-        }
+      // Check if the entered username and password match this row in the CSV file
+      if (row.username === document.getElementById('username').value && row.password === document.getElementById('password').value) {
+        // If there's a match, allow the user to access the secured content
+        window.location.href = 'secured-content.html';
+        return;
       }
-      // Login failed, display error message
-      alert("Invalid username or password.");
     }
-  };
-  xhr.open("GET", "users.csv", true);
-  xhr.send();
-}
+
+    // If there's no match, display an error message
+    document.getElementById('error-message').innerText = 'Invalid username or password';
+  }
+});
