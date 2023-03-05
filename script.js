@@ -10,22 +10,6 @@ function login() {
     alert("Login successful, Redirecting");
     window.location.href = "https://example.com/dashboard";
   } 
-  if (username === "Student" && password === "Student"){
-    alert("Login successful, Redirecting");
-    window.location.href = "https://example.com/dashboard";
-  }
-  if (username === "Faculty" && password === "Faculty"){
-    alert("Login successful, Redirecting");
-    window.location.href = "https://example.com/dashboard";
-  }
-  if (username === "Test" && password === "Test"){
-    alert("Login successful, Redirecting");
-    window.location.href = "https://example.com/dashboard";
-  }
-  if (username === "Subject" && password === "Subject"){
-    alert("Login successful, Redirecting");
-    window.location.href = "https://example.com/dashboard";
-  }
   else {
     alert("Invalid username or password.");
   }
