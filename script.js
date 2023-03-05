@@ -1,22 +1,28 @@
 function login() {
-  // retrieve username and password values from form
+  // Get input values
   var username = document.getElementById("username").value;
   var password = document.getElementById("password").value;
-  
-  // read Excel file using SheetJS
-  var workbook = XLSX.readFile('users.xlsx');
-  var sheet_name_list = workbook.SheetNames;
-  var users = XLSX.utils.sheet_to_json(workbook.Sheets[sheet_name_list[0]]);
-  
-  // find matching user in Excel file
-  var matching_user = users.find(function(user) {
-    return user.username === username && user.password === password;
-  });
-  
-  // check if user was found
-  if (matching_user) {
-    alert("Login successful!");
-  } else {
-    alert("Invalid username or password.");
+  if (username==''||password==''){
+    alert("All credentials should be filled")
   }
+
+  // Read CSV file
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+      var rows = xhr.responseText.split("\n");
+      for (var i = 0; i < rows.length; i++) {
+        var columns = rows[i].split(",");
+        if (username === columns[0] && password === columns[1]) {
+          // Login successful, redirect to desired page
+          window.location.href = "https://example.com/dashboard";
+          return;
+        }
+      }
+      // Login failed, display error message
+      alert("Invalid username or password.");
+    }
+  };
+  xhr.open("GET", "users.csv", true);
+  xhr.send();
 }
