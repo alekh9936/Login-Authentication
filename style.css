@@ -1,9 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Merriweather);
 
 body{
-  background-image: url("https://images.pexels.com/photos/3243090/pexels-photo-3243090.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-
-  background-repeat: round;
+  background: black;
+  background-image: url("https://images.pexels.com/photos/35888/amazing-beautiful-breathtaking-clouds.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-repeat: no-repeat;
   font-family:Merriweather;
   font-size:100%;
   line-height:1.6em;
@@ -167,17 +167,63 @@ input {
   margin-bottom: 0%;
 }
 
-@media(max-width:600px){
-  .box{
-    width:100%;
-    float:none;
+/* Small screens */
+@media (max-width: 576px) {
+  .box {
+    margin-left: 0;
   }
-
-  .login-form{
-    width:100%;
-    float:none;
+  
+  .login-form {
+    margin-right: 0;
+  }
+  
+  .aside-text {
+    margin-right: 0;
+  }
+  
+  .footer {
+    margin-top: 200px;
   }
 }
+
+/* Medium screens */
+@media (min-width: 577px) and (max-width: 768px) {
+  .box {
+    margin-left: 25%;
+  }
+  
+  .login-form {
+    margin-right: 25%;
+  }
+  
+  .aside-text {
+    margin-right: 25%;
+  }
+  
+  .footer {
+    margin-top: 400px;
+  }
+}
+
+/* Large screens */
+@media (min-width: 769px) {
+  .box {
+    margin-left: 35%;
+  }
+  
+  .login-form {
+    margin-right: 35%;
+  }
+  
+  .aside-text {
+    margin-right: 35%;
+  }
+  
+  .footer {
+    margin-top: 800px;
+  }
+}
+
 
 @keyframes up-bump {
   0% { padding-top: 2em; }
